@@ -1,9 +1,7 @@
 // Card.js
 import React from 'react';
-import '../styles/Book.css';
-import '../styles/button.css'
-
-const Book = ({ title, author, editionCount, description }) => {
+import '../styles.css'
+const Book = ({ title, author, editionCount, description, onAddToBookShelf, onRemoveFromBookshelf }) => {
     return (
         <div className="book">
             <div className="book-content">
@@ -23,11 +21,14 @@ const Book = ({ title, author, editionCount, description }) => {
                         {editionCount}
                     </span>
                 </p>
-              
+
             </div>
-            <button className='btn'>
-                Add to Bookshelf
-            </button>
+            {onAddToBookShelf && (
+                <button className='btnblue' onClick={onAddToBookShelf}>Add to Bookshelf</button>
+            )}
+            {onRemoveFromBookshelf && (
+                <button className='btnred' onClick={onRemoveFromBookshelf}>Remove from Bookshelf</button>
+            )}
         </div>
 
     );

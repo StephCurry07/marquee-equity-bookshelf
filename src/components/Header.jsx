@@ -12,7 +12,7 @@ const Header = () => {
 
     return (
         <div>
-            <button type="button" onClick={handleClick}>
+            <button className='button' type="button" onClick={handleClick}>
                 My Bookshelf
             </button>
         </div>

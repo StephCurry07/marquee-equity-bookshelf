@@ -1,8 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
-import BookLibrary from "./bookLibrary";
+import BookLibrary from "./components/bookLibrary";
 import { Route, Routes } from "react-router-dom";
-import MyShelf from "./MyShelf";
+import MyShelf from "./components/MyShelf";
 function App() {
   return (
     <div className="App">
