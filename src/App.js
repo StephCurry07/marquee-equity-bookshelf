@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import BookLibrary from "./bookLibrary";
+import { Route, Routes } from "react-router-dom";
+import MyShelf from "./MyShelf";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1 style={{ textDecoration: "underline" }}>Personal Bookshelf</h1>
       </header>
+      <Routes>
+        <Route path="/MyShelf" element={<MyShelf />} />
+        <Route path="/" element={<BookLibrary />} />
+      </Routes>
     </div>
   );
 }
