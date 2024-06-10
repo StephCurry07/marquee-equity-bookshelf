@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import BookLibrary from "./components/bookLibrary";
 import { Route, Routes } from "react-router-dom";
