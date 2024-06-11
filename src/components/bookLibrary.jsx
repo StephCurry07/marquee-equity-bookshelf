@@ -6,9 +6,10 @@ import BookList from './BookList';
 const BookLibrary = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  const [query, setQuery] = useState('');
   const handleInput = async (e) => {
     const query = e.target.value;
+    setQuery(query);
     if (!query) return;
     setLoading(true);
     try {
@@ -20,10 +21,9 @@ const BookLibrary = () => {
         },
       });
       setBooks(res.data.docs);
-      console.log(books);
     } catch (error) {
       alert(error.message);
-    } finally {
+    } finally{
       setLoading(false);
     }
   };
@@ -49,10 +49,15 @@ return (
       className="search-input"
     />
     {loading ? (
-      <div className="spinner"></div>
-    ) : (
-      <BookList books={books} onAddToBookShelf={addToBookShelf} />
-    )}
+        <div className="spinner"></div>
+      ) : (
+        <>
+          {query && books.length === 0 && (
+            <p className='no-books-found'>No books found. Please try a different search term.</p>
+          )}
+          <BookList books={books} onAddToBookShelf={addToBookShelf} />
+        </>
+      )}
   </div>
 );
 };
