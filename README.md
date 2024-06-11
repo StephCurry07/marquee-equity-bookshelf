@@ -11,7 +11,7 @@ This is a React-based Book Library application that allows users to search for b
 
 ## Features
 
-- **Search Books**: Search for books by name using an external book API.
+- **Search Books**: Search for books by name using Open Library API.
 - **Add to Bookshelf**: Add selected books to your personal bookshelf.
 - **Remove from Bookshelf**: Remove books from your bookshelf.
 - **Responsive Design**: Optimized for both desktop and mobile devices.
