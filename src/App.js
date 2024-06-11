@@ -5,8 +5,8 @@ import MyShelf from "./components/MyShelf";
 function App() {
   return (
     <div className="App">
-      <header>
-        <h1 style={{ textDecoration: "underline" }}>Personal Bookshelf</h1>
+      <header className="header">
+        <h1 className="header-title">Personal Bookshelf</h1>
       </header>
       <Routes>
         <Route path="/MyShelf" element={<MyShelf />} />

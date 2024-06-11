@@ -26,16 +26,26 @@
 }
 
 .book {
+  position: relative;
   background: white;
   padding: 10px;
-  border: 1px solid #ccc;
+  
+  border: 2px solid #ccc;
+  box-shadow: 1px 3px grey;
   border-radius: 8px;
   width: 100%;
   box-sizing: border-box;
+  box-shadow: 2px 4px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+} 
+
+.book:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .book-content {
   padding: 16px;
+  margin-bottom: 10px;
 }
 
 .book-title {
@@ -48,15 +58,19 @@
   color: #666;
 }
 
-/* Button.css */
+.btn {
+  position: absolute;
+  bottom: 10px; 
+  left: 50%;
+  transform: translateX(-50%); /* Centering the button horizontally */
+}
+
 .btnblue {
   display: inline-block;
   padding: 10px 20px;
-  margin-bottom: 5px;
   font-size: 12px;
   font-weight: bold;
   text-align: center;
-  text-decoration: none;
   color: #fff;
   background-color: #007bff;
   border: none;
@@ -68,11 +82,9 @@
 .btnred {
   display: inline-block;
   padding: 10px 20px;
-  margin-bottom: 5px;
   font-size: 12px;
   font-weight: bold;
   text-align: center;
-  text-decoration: none;
   color: #fff;
   background-color: rgb(203, 42, 42);
   border: none;
@@ -91,23 +103,24 @@
 }
 
 .btnred:hover {
-    background-color: rgb(231, 61, 61);
-    transform: scale(1.05);
-  }
-  
-  .btnblue:active {
-    background-color: rgb(210, 9, 9);
-  }
+  background-color: rgb(231, 61, 61);
+  transform: scale(1.05);
+}
+
+.btnblue:active {
+  background-color: rgb(210, 9, 9);
+}
 
 .button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: inline-block;
   padding: 10px 20px;
-  margin: 10px 10px;
   font-size: 12px;
   align-items: end;
   font-weight: bold;
   text-align: center;
-  text-decoration: none;
   color: #fff;
   background-color: rgb(60, 161, 60);
   border: none;
@@ -124,10 +137,31 @@
   .book {
     width: calc(50% - 10px);
   }
+  .button {
+    left: 90%;
+    transform: translateX(-90%);
+  }
+}
+
+@media (max-width: 600px) {
+  .button {
+    left: 50%;
+    transform: translateX(-50%);
+    top:90px;
+    /* transform: translateY(-50%); */
+  }
 }
 
 @media (min-width: 900px) {
   .book {
     width: calc(33.333% - 10px);
   }
+  .button {
+    left: 90%;
+    transform: translateX(-90%);
+  }
 }
+
+
+/* Adjustments for medium screens */
+

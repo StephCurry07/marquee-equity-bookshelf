@@ -3,7 +3,7 @@ import React from 'react';
 import '../styles.css'
 const Book = ({ title, author, editionCount, description, onAddToBookShelf, onRemoveFromBookshelf }) => {
     return (
-        <div className="book">
+        <div className='book'>
             <div className="book-content">
                 <h5 className="book-title">
                     {title}
@@ -23,14 +23,15 @@ const Book = ({ title, author, editionCount, description, onAddToBookShelf, onRe
                 </p>
 
             </div>
-            {onAddToBookShelf && (
-                <button className='btnblue' onClick={onAddToBookShelf}>Add to Bookshelf</button>
-            )}
-            {onRemoveFromBookshelf && (
-                <button className='btnred' onClick={onRemoveFromBookshelf}>Remove from Bookshelf</button>
-            )}
+            <div className='btn'>
+                {onAddToBookShelf && (
+                    <button className='btnblue' onClick={onAddToBookShelf}>Add to Bookshelf</button>
+                )}
+                {onRemoveFromBookshelf && (
+                    <button className='btnred' onClick={onRemoveFromBookshelf}>Remove from Bookshelf</button>
+                )}
+            </div>
         </div>
-
     );
 };
 
